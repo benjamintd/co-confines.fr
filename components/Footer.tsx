@@ -1,0 +1,58 @@
+import React from "react";
+
+import {
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon
+} from "react-share";
+
+const iconParams = {
+  size: 40,
+  iconFillColor: "#767392",
+  bgStyle: { fill: "none" }
+};
+
+export default () => (
+  <div className="flex max-w-xl mx-auto justify-around p-4">
+    <EmailShareButton
+      url={"https://coconfines.info"}
+      subject="Coconfinés"
+      body={`Voici une liste de resources pour mieux vivre le confinement.`}
+    >
+      <EmailIcon {...iconParams} />
+    </EmailShareButton>
+    <LinkedinShareButton
+      url={"https://coconfines.info"}
+      title={`Une liste de resources pour mieux vivre le confinement.`}
+      summary="Ce site répertorie des resources fiables pour mieux vivre le confinement."
+    >
+      <LinkedinIcon {...iconParams} />
+    </LinkedinShareButton>
+    <FacebookShareButton
+      url={"https://coconfines.info"}
+      quote={`Voici une liste de resources pour mieux vivre le confinement !`}
+    >
+      <FacebookIcon {...iconParams} />
+    </FacebookShareButton>
+    <TwitterShareButton
+      url={"https://coconfines.info"}
+      title={`Une liste de resources pour mieux vivre le confinement #coconfinés`}
+    >
+      <TwitterIcon {...iconParams} />
+    </TwitterShareButton>
+    <WhatsappShareButton
+      url={"https://coconfines.info"}
+      title={`Une liste de resources pour mieux vivre le confinement.`}
+      separator=" "
+    >
+      <WhatsappIcon {...iconParams} />
+    </WhatsappShareButton>
+  </div>
+);
