@@ -7,7 +7,7 @@ export default () => {
       <div className="w-10/12 max-w-3xl mx-auto text-center">
         <p>Nous sommes tous</p>
         <h1 className="text-accent-500 font-title lg:text-6xl md:text-5xl text-3xl font-bold py-3">
-          Coconfinés.
+          co-confinés.
         </h1>
         <p className="font-bold">
           Les virus s'affrontent par la science et par le savoir.

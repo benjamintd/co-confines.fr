@@ -36,7 +36,7 @@ const Card = ({ record }: { record: IRecord }) => (
       {record.Thèmes.map((theme: string) => (
         <span
           key={theme}
-          className="bg-accent-400 text-white rounded-full px-2 py-1 text-xs mr-1"
+          className="bg-accent-400 text-white rounded-full px-3 py-1 text-xs mr-2"
         >
           {theme}
         </span>

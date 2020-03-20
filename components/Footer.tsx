@@ -22,33 +22,33 @@ const iconParams = {
 export default () => (
   <div className="flex max-w-xl mx-auto justify-around p-4">
     <EmailShareButton
-      url={"https://coconfines.info"}
-      subject="Coconfinés"
+      url={"https://co-confines.fr"}
+      subject="CoConfinés"
       body={`Voici une liste de resources pour mieux vivre le confinement.`}
     >
       <EmailIcon {...iconParams} />
     </EmailShareButton>
     <LinkedinShareButton
-      url={"https://coconfines.info"}
+      url={"https://co-confines.fr"}
       title={`Une liste de resources pour mieux vivre le confinement.`}
       summary="Ce site répertorie des resources fiables pour mieux vivre le confinement."
     >
       <LinkedinIcon {...iconParams} />
     </LinkedinShareButton>
     <FacebookShareButton
-      url={"https://coconfines.info"}
+      url={"https://co-confines.fr"}
       quote={`Voici une liste de resources pour mieux vivre le confinement !`}
     >
       <FacebookIcon {...iconParams} />
     </FacebookShareButton>
     <TwitterShareButton
-      url={"https://coconfines.info"}
+      url={"https://co-confines.fr"}
       title={`Une liste de resources pour mieux vivre le confinement #coconfinés`}
     >
       <TwitterIcon {...iconParams} />
     </TwitterShareButton>
     <WhatsappShareButton
-      url={"https://coconfines.info"}
+      url={"https://co-confines.fr"}
       title={`Une liste de resources pour mieux vivre le confinement.`}
       separator=" "
     >
