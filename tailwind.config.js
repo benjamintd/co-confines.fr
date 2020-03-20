@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     fontFamily: {
-      title: ["'Baloo Bhai 2'", "cursive"],
+      title: ["'Baloo Bhai 2'", "sans-serif"],
       monospace: ["'Source Code Pro'", "monospace"],
       regular: ["'Source Sans Pro'", "sans-serif"]
     },

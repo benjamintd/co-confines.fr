@@ -1,7 +1,7 @@
 import React from "react";
 
 export default () => (
-  <div className="w-full flex justify-center p-8">
+  <div className="w-full flex justify-center p-16">
     <a href="/contribuer">
       <button className="accent-shadow mr-2 p-3 bg-accent-500 hover:bg-accent-400 shadow text-white rounded cursor-pointer uppercase font-bold">
         <svg
