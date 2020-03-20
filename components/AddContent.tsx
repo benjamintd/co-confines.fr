@@ -2,7 +2,7 @@ import React from "react";
 
 export default () => (
   <div className="w-full flex justify-center p-8">
-    <a href="https://airtable.com/shrOG41Mtw7J3W6Tt">
+    <a href="/contribuer">
       <button className="accent-shadow mr-2 p-3 bg-accent-500 hover:bg-accent-400 shadow text-white rounded cursor-pointer uppercase font-bold">
         <svg
           className="inline -mt-1"
