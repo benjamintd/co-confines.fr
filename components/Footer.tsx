@@ -25,32 +25,32 @@ export default () => (
       <EmailShareButton
         url={"https://co-confines.fr"}
         subject="CoConfinés"
-        body={`Voici une liste de resources pour mieux vivre le confinement.`}
+        body={`Voici une liste de ressources pour mieux vivre le confinement.`}
       >
         <EmailIcon {...iconParams} />
       </EmailShareButton>
       <LinkedinShareButton
         url={"https://co-confines.fr"}
-        title={`Une liste de resources pour mieux vivre le confinement.`}
-        summary="Ce site répertorie des resources fiables pour mieux vivre le confinement."
+        title={`Une liste de ressources pour mieux vivre le confinement.`}
+        summary="Ce site répertorie des ressources fiables pour mieux vivre le confinement."
       >
         <LinkedinIcon {...iconParams} />
       </LinkedinShareButton>
       <FacebookShareButton
         url={"https://co-confines.fr"}
-        quote={`Voici une liste de resources pour mieux vivre le confinement !`}
+        quote={`Voici une liste de ressources pour mieux vivre le confinement !`}
       >
         <FacebookIcon {...iconParams} />
       </FacebookShareButton>
       <TwitterShareButton
         url={"https://co-confines.fr"}
-        title={`Une liste de resources pour mieux vivre le confinement #coconfinés`}
+        title={`Une liste de ressources pour mieux vivre le confinement #coconfinés`}
       >
         <TwitterIcon {...iconParams} />
       </TwitterShareButton>
       <WhatsappShareButton
         url={"https://co-confines.fr"}
-        title={`Une liste de resources pour mieux vivre le confinement.`}
+        title={`Une liste de ressources pour mieux vivre le confinement.`}
         separator=" "
       >
         <WhatsappIcon {...iconParams} />
