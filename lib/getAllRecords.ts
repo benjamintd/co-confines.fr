@@ -10,7 +10,7 @@ export default async function getAllRecords() {
     base("Contenu")
       .select({
         view: "Grille",
-        filterByFormula: "{Statut} = 'prêt à publier'"
+        filterByFormula: "{Statut} = 'publié'"
       })
       .eachPage(
         function page(records, fetchNextPage) {
