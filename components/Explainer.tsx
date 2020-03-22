@@ -6,16 +6,17 @@ export default () => {
     <div className="font-monospace p-4 text-gray-800">
       <div className="w-10/12 max-w-3xl mx-auto text-center">
         <p>Nous sommes tous</p>
-        <h1 className="text-accent-500 font-title lg:text-6xl md:text-5xl text-3xl font-bold py-3">
-          coConfinés.
+        <h1 className="text-accent-500 font-title lg:text-6xl md:text-5xl text-3xl font-bold pt-1 pb-3">
+          Coconfinés.
         </h1>
-        <p className="font-bold">
+        <p className="font-bold py-2">À nous d'en tirer parti.</p>
+        <p className="py-2">
           Les virus s'affrontent par la science et par le savoir.
         </p>
-        <p>
-          En tant que citoyens, nous avons le pouvoir de contribuer à diffuser
-          une information fiable, des bonnes pratiques, et des expériences
-          inspirantes.
+        <p className="py-2">
+          Nous sommes un collectif citoyen qui visons à centraliser et relayer
+          des informations fiables, des bonnes pratiques, et des expériences
+          inspirantes pour mieux vivre cette période.
         </p>
         <div className="flex justify-center lg:py-12 py-8">
           <NeighborsIcon />
@@ -27,8 +28,8 @@ export default () => {
             fiables mises à jour régulièrement.
           </CTA>
           <CTA>
-            <span className="font-bold">Contribuez</span> à compiler le savoir
-            pour faire face quotidiennement au défi du COVID-19.
+            <span className="font-bold">Contribuez</span> à compiler les
+            ressources pour faire face quotidiennement au défi du COVID-19.
           </CTA>
         </div>
       </div>
