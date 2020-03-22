@@ -1,6 +1,6 @@
-# CoConfinés
+# Coconfinés
 
-![coConfinés](https://co-confines.fr/og-image.png "coConfinés")
+![Coconfinés](https://co-confines.fr/og-image.png "Coconfinés")
 
 Ce site répertorie les ressources utiles pour mieux vivre la crise du COVID-19.
 

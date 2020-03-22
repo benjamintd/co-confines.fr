@@ -19,3 +19,5 @@ interface IRecord {
     };
   }>;
 }
+
+type IFilters = { [key: string]: boolean };

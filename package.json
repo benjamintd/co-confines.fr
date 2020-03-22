@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@rehooks/component-size": "^1.0.3",
     "@rehooks/local-storage": "^2.2.3",
     "airtable": "^0.8.1",
     "classnames": "^2.2.6",
+    "framer-motion": "^1.10.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.3.0",
     "next-ga": "^2.3.4",

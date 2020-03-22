@@ -3,7 +3,7 @@ import Head from "next/head";
 
 export default () => (
   <Head>
-    <title>CoConfinés</title>
+    <title>Coconfinés</title>
     <link rel="shortcut icon" href="/favicon.png" />
     <meta property="og:title" content="Coconfinés" />
     <meta

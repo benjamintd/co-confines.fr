@@ -24,7 +24,7 @@ export default () => (
     <div className="flex max-w-xl mx-auto justify-around p-4 pb-12">
       <EmailShareButton
         url={"https://co-confines.fr"}
-        subject="CoConfinés"
+        subject="Coconfinés"
         body={`Voici une liste de ressources pour mieux vivre le confinement.`}
       >
         <EmailIcon {...iconParams} />
@@ -57,7 +57,7 @@ export default () => (
       </WhatsappShareButton>
     </div>
     <div className="py-4 text-center bg-gray-200 text-gray-700">
-      Made with ❤︎ depuis chez nous · coConfinés © 2020
+      Made with ❤︎ depuis chez nous ;)
     </div>
   </>
 );

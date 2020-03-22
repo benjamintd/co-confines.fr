@@ -8,7 +8,7 @@ export default ({ children }) => (
         rel="stylesheet"
       />
     </Head>
-    <div className="w-screen min-h-screen bg-gray-100 font-regular">
+    <div className="w-screen min-h-screen bg-white font-regular">
       {children}
     </div>
   </>

@@ -22,7 +22,7 @@ export default async function getAllRecords() {
             reject(err);
             return;
           } else {
-            resolve(allRecords.map(r => r.fields));
+            resolve(allRecords.map(r => ({ ...r.fields, id: r.id })));
           }
         }
       );

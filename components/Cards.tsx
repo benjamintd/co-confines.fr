@@ -1,64 +1,91 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface IProps {
   records: IRecord[];
 }
 
 export default (props: IProps) => {
+  console.log(props);
   return (
-    <div className="flex flex-wrap max-w-screen-xl mx-auto justify-center">
-      {props.records.map(r => (
-        <Card key={r.id} record={r} />
-      ))}
+    <div className="w-full bg-gray-200 py-6 border-t border-b shadow-inner">
+      <div className="flex flex-wrap max-w-screen-xl mx-auto justify-center">
+        <AnimatePresence>
+          {props.records.map(r => (
+            <Card key={r.id} record={r} />
+          ))}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
 
-const Card = ({ record }: { record: IRecord }) => (
-  <div className="shadow-md lg:w-5/12 md:w-1/2 w-10/12 m-3 bg-white rounded">
-    <a href={record.Lien}>
-      <div
-        className="w-full h-64 border-b border-gray-300 rounded-t"
-        style={{
-          backgroundImage: `url("${record["Image de couverture"][0].thumbnails.large.url}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat"
-        }}
-      ></div>
-    </a>
-    <div className="p-6">
+const Card = ({ record }: { record: IRecord }) => {
+  let image;
+  try {
+    image = record["Image de couverture"][0].thumbnails.large.url;
+  } catch (error) {
+    image = "/og-image.png";
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      positionTransition={true}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.1 }}
+      className="shadow flex flex-col lg:w-5/12 md:w-1/2 w-10/12 m-3 bg-white rounded hover:shadow-xl transition transition-all duration-300"
+    >
       <a href={record.Lien}>
-        <h1 className="text-center font-bold text-xl pb-3 text-gray-800">
-          {record.Titre}
-        </h1>
-      </a>
-      {record.Thèmes.map((theme: string) => (
-        <span
-          key={theme}
-          className="bg-accent-400 text-white rounded-full px-3 py-1 text-xs mr-2"
+        <div
+          className="relative w-full h-64 border-b border-gray-300 rounded-t"
+          style={{
+            backgroundImage: `url("${image}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat"
+          }}
         >
-          {theme}
-        </span>
-      ))}
-
-      <p className="leading-normal py-4">{record.Description}</p>
-      <a
-        href={record.Lien}
-        rel="noopener norefferer"
-        target="_blank"
-        className="self-end text-accent-500 hover:text-accent-400 bottom-0"
-      >
-        <Link />
+          <div
+            className="absolute w-full h-full"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.10) 100%)"
+            }}
+          />
+        </div>
       </a>
-    </div>
-  </div>
-);
+      <div className="p-6">
+        <a href={record.Lien} rel="noopener noreferer" target="_blank">
+          <h1 className="text-center font-bold text-xl pb-3 text-gray-800 hover:text-gray-700">
+            {record.Titre}
+          </h1>
+        </a>
+        <p className="leading-normal py-4">{record.Description}</p>
+      </div>
 
-const Link = () => (
+      <div className="p-6 mt-auto flex flex-wrap">
+        {record.Thèmes &&
+          record.Thèmes.map((theme: string) => (
+            <span
+              key={theme}
+              className="bg-accent-400 text-white rounded-full px-3 py-1 text-xs m-1"
+            >
+              {theme}
+            </span>
+          ))}
+      </div>
+    </motion.div>
+  );
+};
+
+export const Link = () => (
   <svg
-    width="24"
-    height="24"
+    className="mt-2"
+    width="20"
+    height="20"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
