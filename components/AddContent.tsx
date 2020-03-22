@@ -17,7 +17,7 @@ export default () => (
             fill="#E5E6E8"
           />
         </svg>
-        ajouter du contenu
+        Proposer un contenu
       </button>
     </a>
     <style jsx>{`

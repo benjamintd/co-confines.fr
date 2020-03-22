@@ -21,7 +21,10 @@ const iconParams = {
 
 export default () => (
   <>
-    <div className="flex max-w-xl mx-auto justify-around p-4 pb-12">
+    <div className="text-center pb-2 font-monospace text-gray-800">
+      Vous aimez Coconfinés ? Partagez cette page autour de vous.
+    </div>
+    <div className="flex max-w-xl mx-auto justify-around pb-4 pb-12">
       <EmailShareButton
         url={"https://co-confines.fr"}
         subject="Coconfinés"
