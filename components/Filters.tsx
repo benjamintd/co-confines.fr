@@ -27,9 +27,10 @@ const DesktopFilters = ({ filters, setFilters }: IProps) => {
       {Object.keys(filters).map(k => (
         <div
           className={classnames(
-            "cursor-pointer m-2 p-2 rounded-full whitespace-no-wrap",
+            "cursor-pointer m-2 p-2 rounded-full whitespace-no-wrap font-bold",
             {
-              "bg-accent-400 text-white": filters[k]
+              "bg-accent-500 text-white hover:bg-accent-400": filters[k],
+              "text-gray-600 hover:text-gray-800": !filters[k]
             }
           )}
           key={k}
@@ -65,8 +66,10 @@ const MobileFilters = ({ filters, setFilters }: IProps) => {
             className={classnames(
               "cursor-pointer py-2 px-4 whitespace-no-wrap",
               {
-                "bg-accent-500 text-white": filters[k],
-                "bg-gray-100 text-gray-700": !filters[k],
+                "bg-accent-500 text-white hover:bg-accent-400": filters[k],
+                "bg-gray-100 text-gray-700 hover:text-gray-900 hover:bg-gray-200": !filters[
+                  k
+                ],
                 "rounded-t": i === 0,
                 "rounded-b": i === Object.keys(filters).length - 1
               }
