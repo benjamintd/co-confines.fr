@@ -24,7 +24,7 @@ export default () => (
     <div className="text-center pb-2 font-monospace text-gray-800">
       Vous aimez Coconfinés ? Partagez cette page autour de vous.
     </div>
-    <div className="flex max-w-xl mx-auto justify-around pb-4 pb-12">
+    <div className="flex max-w-xl mx-auto justify-around py-4">
       <EmailShareButton
         url={"https://co-confines.fr"}
         subject="Coconfinés"
@@ -58,6 +58,16 @@ export default () => (
       >
         <WhatsappIcon {...iconParams} />
       </WhatsappShareButton>
+    </div>
+    <div className="text-center font-monospace text-gray-800 pb-12">
+      Une idée d'amélioration ?{" "}
+      <a
+        className="underline text-gray-800 hover:text-gray-600"
+        href="/suggestion"
+      >
+        Dites-le nous ici
+      </a>
+      &nbsp;!
     </div>
     <div className="py-4 text-center bg-gray-200 text-gray-700">
       Made with ❤︎ depuis chez nous ;)
