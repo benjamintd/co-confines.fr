@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import classnames from "classnames";
 import useComponentSize from "@rehooks/component-size";
 import Sticky from "react-stickynode";
+import { logEvent } from "../lib/analytics";
 
 interface IProps {
   filters: IFilters;
@@ -38,6 +39,10 @@ const DesktopFilters = ({ filters, setFilters }: IProps) => {
             key={k}
             onClick={() => {
               setFilters({ ...filters, [k]: !filters[k] });
+              if (!filters[k]) {
+                // we're activating the filter
+                logEvent("filterClick", k);
+              }
             }}
           >
             {k}
@@ -85,6 +90,10 @@ const MobileFilters = ({ filters, setFilters }: IProps) => {
             key={k}
             onClick={() => {
               setFilters({ ...filters, [k]: !filters[k] });
+              if (!filters[k]) {
+                // we're activating the filter
+                logEvent("filterClick", k);
+              }
             }}
           >
             {k}
