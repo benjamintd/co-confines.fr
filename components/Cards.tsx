@@ -6,7 +6,6 @@ interface IProps {
 }
 
 export default (props: IProps) => {
-  console.log(props);
   return (
     <div className="w-full bg-gray-200 py-6 border-t border-b shadow-inner">
       <div className="flex flex-wrap max-w-11/12 mx-auto justify-center">
@@ -34,9 +33,8 @@ const Card = ({ record }: { record: IRecord }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       positionTransition={true}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.1 }}
-      className="shadow flex flex-col lg:w-3/12 md:w-4/12 w-10/12 m-3 bg-white rounded hover:shadow-xl transition transition-all duration-300"
+      whileHover={{ scale: 1.02, transition: { duration: 0.1 } }}
+      className="z-0 shadow flex flex-col lg:w-3/12 md:w-4/12 w-10/12 m-3 bg-white rounded hover:shadow-xl transition transition-all duration-300"
     >
       <a href={record.Lien}>
         <div

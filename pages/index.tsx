@@ -52,7 +52,6 @@ const Index = (props: IProps) => {
   useEffect(() => {
     const areAllFiltersOff =
       Object.values(filters).filter(e => !!e).length === 0;
-    console.log(filters, areAllFiltersOff);
 
     if (areAllFiltersOff) {
       setFilteredRecords(records);
