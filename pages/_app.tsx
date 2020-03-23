@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Router from "next/router";
-import withGA from "next-ga";
 import dynamic from "next/dynamic";
+import { initGA, logPageView } from "../lib/analytics";
 
 import Layout from "../components/Layout";
 
@@ -11,7 +11,13 @@ const CookieConsent = dynamic(() => import("../components/CookieConsent"), {
 
 import "../styles/main.css";
 
+Router.events.on("routeChangeComplete", () => logPageView());
+
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    initGA();
+  }, []);
+
   return (
     <Layout>
       <Component {...pageProps} />
@@ -20,4 +26,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default withGA("UA-72962798-5", Router)(MyApp);
+export default MyApp;

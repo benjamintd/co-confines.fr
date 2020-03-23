@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { logEvent } from "../lib/analytics";
 
 interface IProps {
   records: IRecord[];
@@ -27,6 +28,10 @@ const Card = ({ record }: { record: IRecord }) => {
     image = "/og-image.png";
   }
 
+  const trackClick = () => {
+    logEvent("linkClick", record.Titre);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -36,7 +41,12 @@ const Card = ({ record }: { record: IRecord }) => {
       whileHover={{ scale: 1.02, transition: { duration: 0.1 } }}
       className="z-0 shadow flex flex-col lg:w-3/12 md:w-4/12 w-10/12 m-3 bg-white rounded hover:shadow-xl transition transition-all duration-300"
     >
-      <a href={record.Lien}>
+      <a
+        href={record.Lien}
+        rel="noopener noreferer"
+        target="_blank"
+        onClick={trackClick}
+      >
         <div
           className="relative w-full h-64 border-b border-gray-300 rounded-t"
           style={{
@@ -56,7 +66,12 @@ const Card = ({ record }: { record: IRecord }) => {
         </div>
       </a>
       <div className="p-6">
-        <a href={record.Lien} rel="noopener noreferer" target="_blank">
+        <a
+          href={record.Lien}
+          rel="noopener noreferer"
+          target="_blank"
+          onClick={trackClick}
+        >
           <h1 className="text-center font-bold text-xl pb-3 text-gray-800 hover:text-gray-700">
             {record.Titre}
           </h1>
