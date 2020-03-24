@@ -1,13 +1,11 @@
 import React from "react";
-
+import Logo from "../components/Logo";
 import styles from "../styles/about.module.css";
 
 export default () => (
   <div className="mx-auto max-w-3xl m-16">
     <a href="/">
-      <h1 className="text-center text-accent-500 font-title lg:text-4xl md:text-3xl text-xl font-bold p-3">
-        Coconfinés.
-      </h1>
+      <Logo className="text-accent-500 my-4 lg:h-16 md:h-10 h-8 mx-auto"></Logo>
     </a>
 
     <h1 className={styles.title}>Qui sommes nous ?</h1>

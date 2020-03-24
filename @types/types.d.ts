@@ -2,6 +2,7 @@ interface IRecord {
   id: string;
   Titre: string;
   Thèmes: string[];
+  "Type de contenu": string;
   Lien: string;
   Description: string;
   "Image de couverture": Array<{

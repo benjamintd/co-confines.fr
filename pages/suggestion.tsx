@@ -1,8 +1,11 @@
+import React from "react";
+import Logo from "../components/Logo";
+
 export default () => (
   <div className="text-center">
-    <h1 className="text-accent-500 font-title lg:text-4xl md:text-3xl text-xl font-bold p-3">
-      Coconfinés.
-    </h1>
+    <a href="/">
+      <Logo className="text-accent-500 my-4 lg:h-16 md:h-10 h-8 mx-auto"></Logo>
+    </a>
     <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
     <iframe
       className="airtable-embed airtable-dynamic-height"
