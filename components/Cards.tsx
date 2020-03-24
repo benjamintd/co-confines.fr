@@ -76,7 +76,12 @@ const Card = ({ record }: { record: IRecord }) => {
             {record.Titre}
           </h1>
         </a>
-        <p className="leading-normal py-4">{record.Description}</p>
+        {record["Type de contenu"] && (
+          <p className="uppercase tracking-wide font-monospace text-gray-600 pt-6 pb-2 text-xs">
+            {record["Type de contenu"]}
+          </p>
+        )}
+        <p className="leading-normal pb-4">{record.Description}</p>
       </div>
 
       <div className="p-6 mt-auto flex flex-wrap">
@@ -84,7 +89,7 @@ const Card = ({ record }: { record: IRecord }) => {
           record.Thèmes.map((theme: string) => (
             <span
               key={theme}
-              className="bg-accent-400 text-white rounded-full px-3 py-1 text-xs m-1"
+              className="bg-accent-400 text-white rounded-full px-3 py-1 text-xs"
             >
               {theme}
             </span>

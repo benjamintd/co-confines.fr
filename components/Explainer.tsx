@@ -1,14 +1,13 @@
 import React from "react";
 import NeighborsIcon from "./NeighborsIcon";
+import Logo from "./Logo";
 
 export default () => {
   return (
     <div className="font-monospace p-4 text-gray-800">
       <div className="w-10/12 max-w-3xl mx-auto text-center">
         <p>Nous sommes tous</p>
-        <h1 className="text-accent-500 font-title lg:text-6xl md:text-5xl text-3xl font-bold pt-1 pb-3">
-          Coconfinés.
-        </h1>
+        <Logo className="text-accent-500 my-4 lg:h-16 md:h-10 h-8 mx-auto"></Logo>
         <p className="font-bold py-2">À nous d'en tirer parti.</p>
         <p className="py-2">
           Les virus s'affrontent par la science et par le savoir.
