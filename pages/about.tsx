@@ -61,8 +61,7 @@ export default () => (
       <ul className={styles.ul}>
         <li className={styles.li}>
           Une info de qualité qui vous correspond. Sélectionnée après des études
-          ethnologiques qui nous permettent de comprendre vos besoins et vos
-          envies.
+          terrain qui nous permettent de comprendre vos besoins et vos envies.
         </li>
         <li className={styles.li}>
           Une info fiable, passée au crible par plusieurs membres de notre
