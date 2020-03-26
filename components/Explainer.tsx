@@ -17,8 +17,8 @@ export default () => {
           <a className="underline hover:text-gray-600" href="/about">
             collectif citoyen
           </a>{" "}
-          qui voulons diffuser une information fiable, des bonnes pratiques et
-          des expériences inspirantes. Venez découvrir notre sélection&nbsp;!
+          qui veut diffuser une information fiable, des bonnes pratiques et des
+          expériences inspirantes. Venez découvrir notre sélection&nbsp;!
         </p>
         <div className="flex justify-center lg:py-12 py-8">
           <NeighborsIcon />
