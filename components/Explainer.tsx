@@ -5,7 +5,7 @@ import Logo from "./Logo";
 export default () => {
   return (
     <div className="font-monospace p-4 text-gray-800">
-      <div className="w-10/12 max-w-3xl mx-auto text-center">
+      <div className="w-10/12 max-w-5xl mx-auto text-center">
         <p>Nous sommes tous</p>
         <Logo className="text-accent-500 my-4 lg:h-16 md:h-10 h-8 mx-auto"></Logo>
         <p className="font-bold py-2">À nous d'en tirer parti.</p>
@@ -24,14 +24,25 @@ export default () => {
           <NeighborsIcon />
         </div>
 
-        <div className="flex flex-wrap items-center justify-around">
+        <div className="grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 gap-3 items-top justify-around">
           <CTA>
-            <span className="font-bold">Consultez</span> des informations
-            fiables mises à jour régulièrement.
+            <a className="font-bold underline" href="/">
+              Consultez
+            </a>{" "}
+            des informations fiables mises à jour régulièrement.
           </CTA>
           <CTA>
-            <span className="font-bold">Contribuez</span> à compiler les
-            ressources pour faire face quotidiennement au défi du COVID-19.
+            <a className="font-bold underline" href="/contribuer">
+              Contribuez
+            </a>{" "}
+            à compiler les ressources pour faire face quotidiennement au défi du
+            COVID-19.
+          </CTA>
+          <CTA>
+            <a className="font-bold underline" href="/map">
+              Trouvez ou proposez
+            </a>{" "}
+            des initiatives d'entraide autour de chez vous.
           </CTA>
         </div>
       </div>
