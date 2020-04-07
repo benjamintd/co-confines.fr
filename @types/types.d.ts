@@ -19,6 +19,9 @@ interface IRecord {
       };
     };
   }>;
+  "Last modified time": string;
+  likes: number;
+  isLiked: boolean;
 }
 
 type IFilters = { [key: string]: boolean };

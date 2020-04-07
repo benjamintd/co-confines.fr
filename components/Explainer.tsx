@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 export default () => {
   return (
-    <div className="font-monospace p-4 text-gray-800">
+    <div className="font-monospace p-4 pt-8 text-gray-800 border-t-4 border-solid border-accent-500">
       <div className="w-10/12 max-w-5xl mx-auto text-center">
         <p>Nous sommes tous</p>
         <Logo className="text-accent-500 my-4 lg:h-16 md:h-10 h-8 mx-auto"></Logo>
