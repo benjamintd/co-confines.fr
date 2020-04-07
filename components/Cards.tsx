@@ -21,7 +21,7 @@ export default (props: IProps) => {
     ]);
 
     setSorted(tempSorted);
-  }, []);
+  }, [props.records]);
 
   return (
     <div className="w-full bg-gray-200 py-6 border-t border-b shadow-inner">
