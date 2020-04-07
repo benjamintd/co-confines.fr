@@ -69,7 +69,7 @@ const Index = (props: IProps) => {
     <>
       <Meta />
       <Explainer />
-      <RecentContent records={filteredRecords} />
+      <RecentContent records={records} />
       <AddContent />
       <div className="flex lg:flex-row flex-col">
         <Filters filters={filters} setFilters={setFilters} />
