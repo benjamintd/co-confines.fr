@@ -78,8 +78,10 @@ export default ({ record }: { record: IRecord }) => {
               );
               setCurrentlyLiked(!currentlyLiked);
               if (!currentlyLiked) {
+                record.likes += 1;
                 await fetch(`/api/like?id=${record.id}`);
               } else {
+                record.likes -= 1;
                 await fetch(`/api/like?id=${record.id}&unlike=true`);
               }
               mutate("/api/content");
