@@ -10,13 +10,14 @@ import Cards from "../components/Cards";
 import Footer from "../components/Footer";
 import AddContent from "../components/AddContent";
 import Filters from "../components/Filters";
+import RecentContent from "../components/RecentContent";
 
 interface IProps {
   records: Array<IRecord>;
 }
 
 const Index = (props: IProps) => {
-  const [records, setRecords] = useState(props.records);
+  const [records, setRecords] = useState<IRecord[]>(props.records);
   const [filteredRecords, setFilteredRecords] = useState(props.records);
   const [filters, setFilters] = useState({} as IFilters);
   const { data } = useSWR("/api/content", fetcher);
@@ -33,7 +34,7 @@ const Index = (props: IProps) => {
     // collect all the themes and set them as unselected
     const themes = records.reduce((acc, rec) => {
       try {
-        rec.Thèmes.forEach(theme => {
+        rec.Thèmes.forEach((theme) => {
           acc[theme] = false;
         });
         return acc;
@@ -44,20 +45,20 @@ const Index = (props: IProps) => {
 
     setFilters({
       ...filters,
-      ...themes
+      ...themes,
     });
   }, [records]);
 
   // get all the filtered records depending on the filters
   useEffect(() => {
     const areAllFiltersOff =
-      Object.values(filters).filter(e => !!e).length === 0;
+      Object.values(filters).filter((e) => !!e).length === 0;
 
     if (areAllFiltersOff) {
       setFilteredRecords(records);
     } else {
-      const filtered = records.filter(r => {
-        const t = r.Thèmes.filter(t => filters[t]).length;
+      const filtered = records.filter((r) => {
+        const t = r.Thèmes.filter((t) => filters[t]).length;
         return t > 0;
       });
       setFilteredRecords(filtered);
@@ -68,21 +69,25 @@ const Index = (props: IProps) => {
     <>
       <Meta />
       <Explainer />
-      <Filters filters={filters} setFilters={setFilters} />
-      <Cards records={filteredRecords} />
+      <RecentContent records={filteredRecords} />
+      <AddContent />
+      <div className="flex lg:flex-row flex-col">
+        <Filters filters={filters} setFilters={setFilters} />
+        <Cards records={filteredRecords} />
+      </div>
       <AddContent />
       <Footer />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const records = await getAllRecords();
   return { props: { records } };
 };
 
-const fetcher = async url => {
-  return fetch(url).then(res => res.json());
+const fetcher = async (url) => {
+  return fetch(url).then((res) => res.json());
 };
 
 export default Index;
