@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { sortBy } from "lodash";
 import Card from "./Card";
 
 interface IProps {
@@ -7,8 +8,20 @@ interface IProps {
 }
 
 export default (props: IProps) => {
-  const sorted = [...props.records];
-  sorted.sort((a, b) => b.likes - a.likes); // todo also sort by isLiked
+  const [sorted, setSorted] = useState(props.records);
+
+  useEffect(() => {
+    const tempSorted = sortBy(props.records, [
+      (r) => {
+        if (typeof window !== "undefined") {
+          return -+!!window.localStorage.getItem(r.id);
+        }
+      },
+      (r) => -r.likes,
+    ]);
+
+    setSorted(tempSorted);
+  }, []);
 
   return (
     <div className="w-full bg-gray-200 py-6 border-t border-b shadow-inner">
