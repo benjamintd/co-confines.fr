@@ -34,7 +34,7 @@ const Index = (props: IProps) => {
     // collect all the themes and set them as unselected
     const themes = records.reduce((acc, rec) => {
       try {
-        rec.Thèmes.forEach((theme) => {
+        rec.Thèmes.forEach(theme => {
           acc[theme] = false;
         });
         return acc;
@@ -45,20 +45,20 @@ const Index = (props: IProps) => {
 
     setFilters({
       ...filters,
-      ...themes,
+      ...themes
     });
   }, [records]);
 
   // get all the filtered records depending on the filters
   useEffect(() => {
     const areAllFiltersOff =
-      Object.values(filters).filter((e) => !!e).length === 0;
+      Object.values(filters).filter(e => !!e).length === 0;
 
     if (areAllFiltersOff) {
       setFilteredRecords(records);
     } else {
-      const filtered = records.filter((r) => {
-        const t = r.Thèmes.filter((t) => filters[t]).length;
+      const filtered = records.filter(r => {
+        const t = r.Thèmes.filter(t => filters[t]).length;
         return t > 0;
       });
       setFilteredRecords(filtered);
@@ -81,13 +81,13 @@ const Index = (props: IProps) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async context => {
   const records = await getAllRecords();
   return { props: { records } };
 };
 
-const fetcher = async (url) => {
-  return fetch(url).then((res) => res.json());
+const fetcher = async url => {
+  return fetch(url).then(res => res.json());
 };
 
 export default Index;

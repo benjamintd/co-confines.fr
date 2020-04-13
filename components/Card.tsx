@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { logEvent } from "../lib/analytics";
 import fetch from "isomorphic-unfetch";
 import { mutate } from "swr";
@@ -24,21 +23,14 @@ export default ({ record }: { record: IRecord }) => {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      positionTransition={true}
-      whileHover={{ scale: 1.02, transition: { duration: 0.1 } }}
-      className="z-0 shadow bg-white rounded hover:shadow-xl transition transition-all duration-300"
-    >
+    <div className="z-0 shadow bg-white rounded hover:shadow-xl transition transition-all duration-300 hover:scale-105">
       <div
         className="relative w-full h-64 border-b border-gray-300 rounded-t"
         style={{
           backgroundImage: `url("${image}")`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "no-repeat"
         }}
       >
         <a
@@ -51,7 +43,7 @@ export default ({ record }: { record: IRecord }) => {
             className="absolute w-full h-full"
             style={{
               background:
-                "linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.10) 100%)",
+                "linear-gradient(180deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.10) 100%)"
             }}
           />
         </a>
@@ -59,7 +51,7 @@ export default ({ record }: { record: IRecord }) => {
           className="absolute w-full h-10 bottom-0 flex items-center justify-between p-4 text-white font-monospace"
           style={{
             backgroundColor: "rgba(18, 16, 48, 0.2)",
-            textShadow: "0px 1px 2px rgba(0, 0, 0, 0.34)",
+            textShadow: "0px 1px 2px rgba(0, 0, 0, 0.34)"
           }}
         >
           <div>
@@ -70,7 +62,7 @@ export default ({ record }: { record: IRecord }) => {
           </div>
           <div
             className="cursor-pointer flex items-center"
-            onClick={async (e) => {
+            onClick={async e => {
               e.stopPropagation();
               window.localStorage.setItem(
                 record.id,
@@ -122,7 +114,7 @@ export default ({ record }: { record: IRecord }) => {
             </span>
           ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -166,9 +158,9 @@ export const Heart = ({ filled }: { filled: boolean }) => {
             width="25.7007"
             height="22.9261"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -218,9 +210,9 @@ export const Heart = ({ filled }: { filled: boolean }) => {
             width="25.7007"
             height="22.9261"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
