@@ -210,7 +210,7 @@ export const Heart = ({ filled }: { filled: boolean }) => {
             width="25.7007"
             height="22.9261"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix

@@ -15,7 +15,7 @@ export default ({ records }: { records: IRecord[] }) => {
         <h1 className="font-bold text-2xl pb-6">Les contenus les + récents</h1>
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 ">
           {mostRecentThree.map(content => (
-            <Card record={content} />
+            <Card key={content.id} record={content} />
           ))}
         </div>
       </div>
