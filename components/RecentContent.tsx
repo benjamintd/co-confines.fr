@@ -9,13 +9,12 @@ export default ({ records }: { records: IRecord[] }) => {
       new Date(a["Last modified time"]).getTime()
   );
   const mostRecentThree = recCopy.slice(0, 3);
-  console.log(mostRecentThree);
   return (
     <div className="w-full bg-gray-200 p-8 border-t border-b">
       <div className="w-10/12 mx-auto">
         <h1 className="font-bold text-2xl pb-6">Les contenus les + récents</h1>
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 ">
-          {mostRecentThree.map((content) => (
+          {mostRecentThree.map(content => (
             <Card record={content} />
           ))}
         </div>
