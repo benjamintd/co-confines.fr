@@ -70,7 +70,10 @@ export default () => (
       &nbsp;!
     </div>
     <div className="py-4 text-center bg-gray-200 text-gray-700">
-      Made with ❤︎ depuis chez nous ;)
+      <p>Made with ❤︎ depuis chez nous ;)</p>
+      <a className="underline hover:text-gray-500" href="/mentions-legales.pdf">
+        Mentions légales
+      </a>
     </div>
   </div>
 );

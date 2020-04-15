@@ -26,30 +26,37 @@ export default (props: IProps) => {
 
 const DesktopFilters = ({ filters, setFilters }: IProps) => {
   return (
-    <Sticky enabled={true} bottomBoundary="#filters" className="w-full">
+    <Sticky
+      enabled={true}
+      top="#header"
+      bottomBoundary="#filters"
+      className="w-full"
+    >
       <div className="py-8 px-4 font-monospace">
         <div className="font-bold pl-2">Filtres</div>
-        {Object.keys(filters).map((k) => (
-          <div
-            className={classnames(
-              "cursor-pointer p-2 my-2 rounded-full whitespace-no-wrap text-sm block",
-              {
-                "bg-accent-500 text-white hover:bg-accent-400": filters[k],
-                "text-gray-600 hover:text-gray-800": !filters[k],
-              }
-            )}
-            key={k}
-            onClick={() => {
-              setFilters({ ...filters, [k]: !filters[k] });
-              if (!filters[k]) {
-                // we're activating the filter
-                logEvent("filterClick", k);
-              }
-            }}
-          >
-            {k}
-          </div>
-        ))}
+        {Object.keys(filters)
+          .sort()
+          .map((k) => (
+            <div
+              className={classnames(
+                "cursor-pointer p-2 my-2 rounded-full whitespace-no-wrap text-sm block",
+                {
+                  "bg-accent-500 text-white hover:bg-accent-400": filters[k],
+                  "text-gray-600 hover:text-gray-800": !filters[k],
+                }
+              )}
+              key={k}
+              onClick={() => {
+                setFilters({ ...filters, [k]: !filters[k] });
+                if (!filters[k]) {
+                  // we're activating the filter
+                  logEvent("filterClick", k);
+                }
+              }}
+            >
+              {k}
+            </div>
+          ))}
       </div>
     </Sticky>
   );
@@ -57,7 +64,7 @@ const DesktopFilters = ({ filters, setFilters }: IProps) => {
 
 const MobileFilters = ({ filters, setFilters }: IProps) => {
   return (
-    <Sticky enabled={true} className="z-50">
+    <Sticky enabled={true} top="#header" className="z-50">
       <div className="w-full px-12 flex overflow-x-scroll lg:text-md text-sm bg-gray-100 border-t border-b shadow-md">
         {Object.keys(filters).map((k) => (
           <div
