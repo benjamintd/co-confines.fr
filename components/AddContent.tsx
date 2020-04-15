@@ -18,12 +18,12 @@ export default () => (
           />
         </svg>
         Proposer un contenu
+        <style jsx>{`
+          .accent-shadow {
+            box-shadow: 0px 8px 24px rgba(108, 99, 255, 0.47);
+          }
+        `}</style>
       </button>
     </a>
-    <style jsx>{`
-      .accent-shadow {
-        box-shadow: 0px 8px 24px rgba(108, 99, 255, 0.47);
-      }
-    `}</style>
   </div>
 );

@@ -1,5 +1,5 @@
 .title {
-  @apply font-monospace font-bold text-xl pb-4 pt-8;
+  @apply font-bold text-3xl pb-4 pt-8;
 }
 
 .p {
